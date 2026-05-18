@@ -1,18 +1,24 @@
-JohnDoe Free Bootstrap landing page for personal and commercial use. Designed with ♥️ and creativity by Devcrud.com 
+Dr. Suman De — Personal Professional Profile Site
+https://your-speaker.github.io
 
-Product Page: https://wwww.devcrud.com/
+Executive Split design — custom single-page portfolio for Dr. Suman De,
+Head of Research & Industry-Academia Partnerships at SAP Labs India.
 
-Credits:
+Built with Bootstrap 4, jQuery, Isotope, Playfair Display + Inter (Google Fonts),
+and Themify Icons.
 
-    Demo Images:
-        Unsplash:       	(https://www.unsplash.com)
+Assets used:
 
     Icons:
-		Themify Icons: 		(https://themify.me/themify-icons)
+        Themify Icons:      (https://themify.me/themify-icons)
 
-	Other:
-		JQuery: 			(https://www.jquery.com)
-		Bootstrap: 			(https://www.getbootstrap.com)
-		Bootstrap Affix: 	(http://getbootstrap.com/javascript/#affix)  
-		Isotope: 			(https://isotope.metafizzy.co/) 
-		Google Maps:		(https://maps.google.com)
+    Fonts:
+        Google Fonts:       (https://fonts.google.com)
+            Playfair Display
+            Inter
+
+    Libraries:
+        jQuery:             (https://www.jquery.com)
+        Bootstrap 4:        (https://www.getbootstrap.com)
+        Bootstrap Affix:    (http://getbootstrap.com/javascript/#affix)
+        Isotope:            (https://isotope.metafizzy.co/)
