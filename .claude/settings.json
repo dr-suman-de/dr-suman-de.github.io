@@ -10,7 +10,9 @@
       "Bash(find ~/Downloads ~/Desktop ~/Documents -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" 2>/dev/null | xargs ls -t 2>/dev/null | head -20)",
       "Read(//Users/I322264/Downloads/**)",
       "Bash(find ~/Downloads -name \"*.jpeg\" -newer ~/Downloads/1773579087237.jpeg 2>/dev/null; find ~/.claude -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" 2>/dev/null | head -10)",
-      "Read(//Users/I322264/.claude/**)"
+      "Read(//Users/I322264/.claude/**)",
+      "WebFetch(domain:www.credly.com)",
+      "WebSearch"
     ]
   }
 }
