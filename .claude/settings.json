@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:ieeexplore.ieee.org)",
-      "WebFetch(domain:scholar.google.com)"
+      "WebFetch(domain:scholar.google.com)",
+      "Read(//private/tmp/**)",
+      "Bash(xargs ls -t)",
+      "Bash(find /var/folders/c7/kml0mhz541dfj9q47wv9rx880000gn/T -name \"*.jpg\" -newer /Users/I322264/Development/your-speaker.github.io/index.html 2>/dev/null | head -10)",
+      "Read(//private/var/folders/c7/kml0mhz541dfj9q47wv9rx880000gn/T/**)",
+      "Bash(find ~/Downloads ~/Desktop ~/Documents -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" 2>/dev/null | xargs ls -t 2>/dev/null | head -20)",
+      "Read(//Users/I322264/Downloads/**)",
+      "Bash(find ~/Downloads -name \"*.jpeg\" -newer ~/Downloads/1773579087237.jpeg 2>/dev/null; find ~/.claude -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" 2>/dev/null | head -10)",
+      "Read(//Users/I322264/.claude/**)"
     ]
   }
 }
