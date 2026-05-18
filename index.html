@@ -1,23 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Official website of Dr. Suman De — Head of Research &amp; Industry-Academia Partnerships at SAP Labs India. Researcher, Author, and Speaker in Cloud ERP and Industry 4.0.">
+    <meta name="description" content="Dr. Suman De — Head of Research &amp; Industry-Academia Partnerships at SAP Labs India. PhD from IIT Kharagpur. 11 years at SAP. 52 publications. Keynote Speaker.">
     <meta name="author" content="Dr. Suman De">
-    <title>Dr. Suman De — Researcher | Author | Speaker</title>
-    <!-- font icons -->
+    <title>Dr. Suman De — Product Leader | Research Scientist | Keynote Speaker</title>
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + JohnDoe main styles -->
-	<link rel="stylesheet" href="assets/css/johndoe.css">
+    <link rel="stylesheet" href="assets/css/johndoe.css">
+    <style>
+        /* ── Custom premium layer ───────────────────────────── */
+        :root { --accent: #F85C70; --dark-bg: #1a1d23; }
+
+        /* Header credential chips */
+        .header-creds { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.25rem; }
+        .cred-chip {
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.28);
+            color: rgba(255,255,255,.92);
+            padding: .28rem .85rem;
+            border-radius: 50px;
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+        }
+        .cred-chip i { margin-right: .3rem; }
+
+        /* ── About – premium two-column ─────────────────── */
+        .about-premium { padding: 72px 0; }
+        .profile-photo {
+            width: 270px; height: 270px;
+            object-fit: cover; object-position: top center;
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(0,0,0,.14);
+        }
+        .photo-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: .3rem .9rem;
+            border-radius: 50px;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin-top: .75rem;
+            box-shadow: 0 4px 16px rgba(248,92,112,.35);
+        }
+        .eyebrow {
+            font-size: .72rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--accent); margin-bottom: .3rem;
+        }
+        .stat-chip {
+            background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px;
+            padding: .85rem .75rem; text-align: center; margin-bottom: .75rem;
+        }
+        .stat-chip .num { font-size: 1.65rem; font-weight: 800; color: var(--accent); line-height: 1; display: block; }
+        .stat-chip .lbl { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #6c757d; }
+
+        /* ── Impact bar ──────────────────────────────────── */
+        .impact-bar { background: var(--dark-bg); }
+        .impact-num { font-size: 2.75rem; font-weight: 800; color: var(--accent); line-height: 1; }
+        .impact-lbl { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.55); margin-top: .35rem; }
+        .impact-divider { width: 1px; background: rgba(255,255,255,.1); align-self: stretch; }
+
+        /* ── What I offer cards ──────────────────────────── */
+        .offer-card {
+            border: none; border-top: 3px solid var(--accent);
+            border-radius: 0 0 10px 10px;
+            padding: 2rem 1.75rem;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,.06);
+            height: 100%; transition: transform .25s, box-shadow .25s;
+        }
+        .offer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.10); }
+        .offer-icon { font-size: 1.75rem; color: var(--accent); margin-bottom: .75rem; }
+
+        /* ── Career timeline ─────────────────────────────── */
+        .tl-wrap { position: relative; padding-left: 2.25rem; }
+        .tl-wrap::before {
+            content: ''; position: absolute; left: 6px; top: 8px; bottom: 0;
+            width: 2px; background: linear-gradient(to bottom, var(--accent) 0%, #dee2e6 100%);
+        }
+        .tl-item { position: relative; margin-bottom: 2rem; }
+        .tl-dot {
+            position: absolute; left: -1.875rem; top: 5px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: var(--accent); border: 2px solid #fff;
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        .tl-dot.current {
+            background: #fff;
+            animation: tl-pulse 2s infinite;
+        }
+        @keyframes tl-pulse {
+            0%,100% { box-shadow: 0 0 0 3px var(--accent); }
+            50%      { box-shadow: 0 0 0 7px rgba(248,92,112,.2), 0 0 0 3px var(--accent); }
+        }
+        .tl-period { font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 1px; }
+        .tl-role { font-size: 1rem; font-weight: 700; color: #212529; margin-bottom: 1px; }
+        .tl-org { font-size: .875rem; color: #6c757d; margin-bottom: .4rem; }
+        .tl-desc { font-size: .845rem; color: #495057; line-height: 1.7; }
+
+        /* Impact chips for speaking/committees */
+        .impact-chip {
+            display: flex; align-items: center; background: #f8f9fa;
+            border: 1px solid #e9ecef; border-radius: 10px;
+            padding: 1rem 1.25rem; margin-bottom: .75rem;
+        }
+        .impact-chip .big { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-right: .85rem; min-width: 50px; }
+        .impact-chip .desc { font-size: .85rem; color: #495057; line-height: 1.4; }
+
+        /* ── Publications – enhanced cards ──────────────── */
+        .pub-card {
+            border: none; border-radius: 12px; background: #fff;
+            padding: 1.35rem 1.5rem; margin-bottom: 1.25rem;
+            box-shadow: 0 2px 14px rgba(0,0,0,.055); transition: all .25s; height: 100%;
+            display: flex; flex-direction: column;
+        }
+        .pub-card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.10); transform: translateY(-3px); }
+        .pub-venue { font-size: .68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+        .pub-title { font-size: .95rem; font-weight: 700; color: #212529; line-height: 1.4; margin-bottom: .4rem; flex: 1; }
+        .pub-meta { font-size: .78rem; color: #6c757d; }
+        .pub-badge {
+            display: inline-block; font-size: .68rem; font-weight: 700;
+            padding: .18rem .6rem; border-radius: 50px;
+            background: rgba(248,92,112,.1); color: var(--accent); margin-right: .35rem;
+        }
+
+        /* ── Education ───────────────────────────────────── */
+        .edu-card {
+            border: none; border-left: 3px solid var(--accent);
+            padding: 1.25rem 1.5rem; margin-bottom: 1.1rem;
+            background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.05);
+            transition: transform .25s, box-shadow .25s;
+        }
+        .edu-card:hover { transform: translateX(4px); box-shadow: 0 6px 24px rgba(0,0,0,.09); }
+        .edu-degree { font-size: 1rem; font-weight: 700; color: #212529; margin-bottom: 2px; }
+        .edu-school { font-size: .875rem; color: #495057; margin-bottom: 2px; }
+        .edu-meta { font-size: .75rem; color: var(--accent); font-weight: 600; }
+
+        /* ── Skills ──────────────────────────────────────── */
+        .skill-group-label { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6c757d; margin-bottom: .5rem; }
+        .skill-tag {
+            display: inline-block; background: #f8f9fa; border: 1px solid #e9ecef;
+            color: #495057; padding: .28rem .75rem; border-radius: 50px;
+            font-size: .82rem; margin: .2rem; transition: all .2s;
+        }
+        .skill-tag:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .skill-tag.ft { background: rgba(248,92,112,.08); border-color: rgba(248,92,112,.4); color: var(--accent); font-weight: 600; }
+
+        /* ── Certifications ──────────────────────────────── */
+        .cert-item { display: flex; align-items: center; padding: .7rem 0; border-bottom: 1px solid #f1f3f5; }
+        .cert-item:last-child { border-bottom: none; }
+        .cert-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: rgba(248,92,112,.08); color: var(--accent);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-right: .85rem; font-size: .9rem;
+        }
+        .cert-name { font-size: .875rem; font-weight: 600; color: #212529; margin: 0; line-height: 1.25; }
+        .cert-issuer { font-size: .75rem; color: #6c757d; }
+
+        /* ── Achievements ────────────────────────────────── */
+        .ach-list { list-style: none; padding: 0; margin: 0; }
+        .ach-list li { display: flex; align-items: flex-start; padding: .6rem 0; border-bottom: 1px solid #f1f3f5; font-size: .9rem; color: #495057; }
+        .ach-list li:last-child { border-bottom: none; }
+        .ach-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin: .45rem .75rem 0 0; }
+        .ach-strong { font-weight: 700; color: #212529; }
+
+        /* ── Misc tweaks ─────────────────────────────────── */
+        .btn-rounded { border-radius: 50px !important; padding-left: 1.4rem !important; padding-right: 1.4rem !important; }
+        .section-lg { padding: 80px 0; }
+        .text-accent { color: var(--accent) !important; }
+    </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
     <header class="header">
         <div class="container">
             <ul class="social-icons pt-3">
                 <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com" target="_blank"><i class="ti-google" aria-hidden="true"></i></a></li>
+                <li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com"><i class="ti-google" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube" aria-hidden="true"></i></a></li>
@@ -25,10 +190,19 @@
             <div class="header-content">
                 <h4 class="header-subtitle">Hello, I am</h4>
                 <h1 class="header-title">Dr. Suman De</h1>
-                <h6 class="typed">Head of Research &amp; Industry-Academia Partnerships | Author | Speaker</h6>
+                <h6 class="typed">Global Product Leader &amp; Research Scientist</h6>
+                <div class="header-creds">
+                    <span class="cred-chip"><i class="ti-crown"></i>PhD &middot; IIT Kharagpur</span>
+                    <span class="cred-chip"><i class="ti-briefcase"></i>11 Years at SAP</span>
+                    <span class="cred-chip"><i class="ti-book"></i>52 Publications</span>
+                    <span class="cred-chip"><i class="ti-microphone"></i>11 Keynote Talks</span>
+                    <span class="cred-chip"><i class="ti-cup"></i>61 SAP Awards</span>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- ══ NAVBAR ════════════════════════════════════════════ -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
         <div class="container">
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,308 +210,340 @@
             </button>
             <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#research" class="nav-link">Research</a>
-                    </li>
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#career" class="nav-link">Career</a></li>
+                    <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
                 </ul>
                 <ul class="navbar-nav brand">
-                    <img src="assets/imgs/avatar.jpg" alt="Dr. Suman De" class="brand-img">
+                    <img src="assets/imgs/suman-de.jpg" alt="Dr. Suman De" class="brand-img">
                     <li class="brand-txt">
                         <h5 class="brand-title">Dr. Suman De</h5>
                         <div class="brand-subtitle">Head, Research &amp; Industry-Academia Partnerships</div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Speaking</a>
-                    </li>
-                    <li class="nav-item last-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Speaking</a></li>
+                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                    <li class="nav-item last-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <div class="container-fluid">
-        <div id="about" class="row about-section">
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Who am I?</h3>
-                <span class="line mb-5"></span>
-                <h5 class="mb-3">Head of Research &amp; Industry-Academia Partnerships at SAP Labs India</h5>
-                <p class="mt-20">Dr. Suman De is a researcher, author, and thought leader in Cloud ERP, Industry 4.0, and Software Engineering. With over 280 citations and an h-index of 10, he actively bridges academia and enterprise technology. He is co-author of <em>Haphazard Reality Revisited: Half a Century of Random Thoughts</em> with Shoumen Palit Austin Datta (MIT), and a keynote speaker at IEEE conferences worldwide.</p>
-                <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-outline-danger"><i class="ti-book pr-2"></i>Google Scholar Profile</a>
+    <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+    <section id="about" class="about-premium">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Photo column -->
+                <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                    <img src="assets/imgs/suman-de.jpg" alt="Dr. Suman De" class="profile-photo">
+                    <div><span class="photo-badge">SAP Labs India &middot; Bangalore</span></div>
+                    <ul class="social-icons justify-content-center mt-4">
+                        <li class="social-item"><a class="social-link" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" style="color:#0077b5"><i class="ti-linkedin"></i></a></li>
+                        <li class="social-item"><a class="social-link" href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" style="color:#4285F4"><i class="ti-book"></i></a></li>
+                        <li class="social-item"><a class="social-link" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank" style="color:#F85C70"><i class="ti-youtube"></i></a></li>
+                        <li class="social-item"><a class="social-link" href="https://twitter.com/somude" target="_blank" style="color:#1da1f2"><i class="ti-twitter"></i></a></li>
+                        <li class="social-item"><a class="social-link" href="https://www.instagram.com/sumandevneogi/" target="_blank" style="color:#e1306c"><i class="ti-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Bio column -->
+                <div class="col-lg-8 pl-lg-5">
+                    <p class="eyebrow">Who is Dr. Suman De?</p>
+                    <h2 class="font-weight-bold mb-2" style="font-size:2rem; line-height:1.2;">Global Product Leader<br>&amp; Research Scientist</h2>
+                    <span class="line mb-4"></span>
+                    <p class="lead" style="color:#495057;">A results-driven professional with 11 years at SAP and a PhD from IIT Kharagpur's Centre for Computational &amp; Data Sciences, Dr. Suman De leads Research &amp; Industry-Academia Partnerships at SAP Labs India. His work spans enterprise product management, cutting-edge AI and Cloud ERP research, and academia — co-developing curricula with the Technical University of Munich, IITs, and other leading institutions.</p>
+                    <p style="color:#6c757d;">With 52 research publications across <em>IEEE Transactions on Artificial Intelligence</em>, <em>IEEE Engineering Management Review</em>, and Springer, 282+ citations (h-index: 10), and 11 international keynote talks, Dr. De is a recognised thought leader. He is a former Visiting Faculty for MBA students at Symbiosis International University, and is nominated for the <em>Indian Youth Engineering Icon of the Year</em> at the IET Awards.</p>
+
+                    <!-- Stat chips -->
+                    <div class="row mt-3 mb-4">
+                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">11</span><span class="lbl">Yrs at SAP</span></div></div>
+                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">52</span><span class="lbl">Publications</span></div></div>
+                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">282+</span><span class="lbl">Citations</span></div></div>
+                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div></div>
+                    </div>
+
+                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-danger btn-rounded mr-2 mb-2"><i class="ti-book pr-2"></i>Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-danger btn-rounded mr-2 mb-2"><i class="ti-linkedin pr-2"></i>LinkedIn</a>
+                    <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="btn btn-outline-danger btn-rounded mb-2"><i class="ti-link pr-2"></i>IEEE Xplore</a>
+                </div>
             </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Personal Info</h3>
-                <span class="line mb-5"></span>
-                <ul class="mt40 info list-unstyled">
-                    <li><span>Email</span> : write2sumand@gmail.com</li>
-                    <li><span>Twitter</span> : @somude</li>
-                    <li><span>Organization</span> : SAP Labs India Pvt. Ltd.</li>
-                    <li><span>Role</span> : Head, Research &amp; Industry-Academia Partnerships</li>
-                    <li><span>Location</span> : Bangalore, India</li>
-                </ul>
-                <ul class="social-icons pt-3">
-					<li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-					<li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-					<li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com" target="_blank"><i class="ti-google" aria-hidden="true"></i></a></li>
-					<li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-					<li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-					<li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">How Can I Help?</h3>
-                <span class="line mb-5"></span>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Research</h6>
-                        <p class="subtitle">Collaborate on impactful academic research in Cloud ERP, Industry 4.0, Design Thinking, and Software Engineering. Publish and promote research that bridges theory and enterprise practice.</p>
-                        <hr>
+
+            <!-- What I Offer — 3 cards -->
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-icon"><i class="ti-widget"></i></div>
+                        <h5 class="font-weight-bold mb-2">Research &amp; Innovation</h5>
+                        <p class="subtitle mb-0">Collaborative research on Cloud ERP, Industry 4.0, AI, and Software Engineering. Driving publications, patents, and prototypes with leading universities and enterprise teams.</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Product Management</h6>
-                        <p class="subtitle">Drive enterprise product strategy using design thinking and agile principles. Deep expertise in the Cloud ERP product lifecycle and intelligent enterprise solutions at SAP.</p>
-                        <hr>
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-icon"><i class="ti-paint-bucket"></i></div>
+                        <h5 class="font-weight-bold mb-2">Product Leadership</h5>
+                        <p class="subtitle mb-0">11 years of product management at SAP — from S/4HANA Public Cloud and BTP to startup incubation. Full-stack expertise, telemetry-driven strategy, and cross-functional team leadership.</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Thought Leadership</h6>
-                        <p class="subtitle">Keynote speaker at IEEE conferences. Author. Host of <em>The Wandering Geek</em> on YouTube. Evangelising research-driven innovation in enterprise technology and academia.</p>
-                        <hr>
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-icon"><i class="ti-stats-up"></i></div>
+                        <h5 class="font-weight-bold mb-2">Thought Leadership &amp; Mentoring</h5>
+                        <p class="subtitle mb-0">11 international keynotes, 25+ conference talks, MBA teaching, and hosting <em>The Wandering Geek</em> YouTube channel. Mentoring researchers, PMs, and startup founders.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ IMPACT BAR ════════════════════════════════════════ -->
+    <div class="impact-bar py-5">
+        <div class="container">
+            <div class="row text-center align-items-center">
+                <div class="col-6 col-md-3 py-3">
+                    <div class="impact-num">11</div>
+                    <div class="impact-lbl">Years at SAP</div>
+                </div>
+                <div class="col-6 col-md-3 py-3">
+                    <div class="impact-num">52</div>
+                    <div class="impact-lbl">Publications</div>
+                </div>
+                <div class="col-6 col-md-3 py-3">
+                    <div class="impact-num">282+</div>
+                    <div class="impact-lbl">Citations</div>
+                </div>
+                <div class="col-6 col-md-3 py-3">
+                    <div class="impact-num">11</div>
+                    <div class="impact-lbl">Keynote Talks</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Research Metrics Bar -->
-    <section class="section bg-dark text-center">
+    <!-- ══ CAREER JOURNEY ════════════════════════════════════ -->
+    <section class="section section-lg" id="career">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-lg-3">
-                    <div class="row ">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-quote-right icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">282</h1>
-                            <p class="text-light mb-1">Total Citations</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-layers-alt icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">11</h1>
-                            <p class="text-light mb-1">Publications</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-bar-chart icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">10</h1>
-                            <p class="text-light mb-1">h-index</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-microphone icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">5+</h1>
-                            <p class="text-light mb-1">Keynote Talks</p>
-                        </div>
-                    </div>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <p class="eyebrow">Professional Journey</p>
+                    <h2 class="font-weight-bold">Career <span class="text-danger">Timeline</span></h2>
+                    <span class="line"></span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Research Publications Section -->
-    <section class="section" id="research">
-        <div class="container">
-            <h2 class="mb-5"><span class="text-danger">Research</span> Publications</h2>
             <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
+
+                <!-- Left: SAP progression + Symbiosis -->
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="tl-wrap">
+
+                        <div class="tl-item">
+                            <div class="tl-dot current"></div>
+                            <div class="tl-period">Nov 2025 &ndash; Present</div>
+                            <div class="tl-role">Head &mdash; Research &amp; Industry-Academia Partnerships</div>
+                            <div class="tl-org">SAP Labs India &middot; Managing Director&rsquo;s Office</div>
+                            <div class="tl-desc">Leading strategic industry&ndash;academia collaborations, patent creation, and research aligned with enterprise technology priorities. Established partnerships with TU Munich, IITs, and other leading universities for joint research, hackathons, and talent pipeline development.</div>
                         </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2022 &middot; 23 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Resource Scheduling in Cloud</h5>
-                            <p class="subtitle">An efficient technique of resource scheduling in cloud using graph coloring algorithm. <em>Global Transitions Proceedings.</em></p>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Apr 2023 &ndash; Aug 2024</div>
+                            <div class="tl-role">Location Head &mdash; Public Cloud ERP Product Management, India</div>
+                            <div class="tl-org">SAP Labs India</div>
+                            <div class="tl-desc">Led the India location for S/4HANA Public Cloud Product Management — driving strategic initiatives and cross-functional collaboration for a team of 32 Product Managers.</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Aug 2021 &ndash; Dec 2025</div>
+                            <div class="tl-role">Product Manager &mdash; Adoption &amp; Experience</div>
+                            <div class="tl-org">SAP &middot; Global Adoption &amp; Experience, Labs India Customer Office</div>
+                            <div class="tl-desc">Contributed to global cross-functional product management for S/4HANA Public Cloud. Built telemetry infrastructure, led user research spanning Sales, Marketing, Engineering, and Customer Success, and shaped product vision, strategy, and roadmap for enterprise applications on BTP.</div>
                         </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2021 &middot; 20 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Chaos Engineering for Cloud Quality</h5>
-                            <p class="subtitle">A study on chaos engineering for improving cloud software quality and reliability. <em>Intl. Conference on Disruptive Technologies.</em></p>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Jun 2023 &ndash; Oct 2025</div>
+                            <div class="tl-role">Visiting Faculty &mdash; MBA Programme</div>
+                            <div class="tl-org">Symbiosis International University &middot; SIBM, Pune</div>
+                            <div class="tl-desc">Taught Data Analytics, Cloud, Marketing, and Artificial Intelligence to full-time MBA students. Designed experiential learning-based evaluations to bridge industry practice with academic rigour.</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Jul 2017 &ndash; Dec 2019</div>
+                            <div class="tl-role">Solution Architect &mdash; Startup Accelerators</div>
+                            <div class="tl-org">SAP &middot; Startup Studio &amp; Startup Focus Programmes</div>
+                            <div class="tl-desc">Helped startups implement SAP technologies and provided technical and functional consultation for MVP development. Advised on technology stack, UI/UX, and SAP Business Technology Platform (BTP).</div>
                         </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2019 &middot; 16 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Design Thinking for Enterprise Apps</h5>
-                            <p class="subtitle">A brief study on enhancing quality of enterprise applications using design thinking. <em>Intl. Journal of Education and Management Engineering.</em></p>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Aug 2015 &ndash; Jun 2022</div>
+                            <div class="tl-role">Full-Stack Developer &amp; Agile Coach</div>
+                            <div class="tl-org">SAP Labs India</div>
+                            <div class="tl-desc">Feature development across Business Networks, S/4HANA Cloud, and Web IDE Gateway using SAP UI5 (frontend) and Scala/Java (backend). Served as Agile Coach for 150+ colleagues and contributed to research topics. Reduced custom CSS usage by 61%.</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 14 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Threat Modelling &amp; Design Thinking</h5>
-                            <p class="subtitle">A novel perspective to threat modelling using design thinking and agile principles. <em>IEEE PDGC 2020.</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 14 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Distributed File Systems</h5>
-                            <p class="subtitle">A comparative study on distributed file systems. <em>Intl. Conference on Cybernetics, Cognition and Machine Learning.</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 12 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Fake News Detection</h5>
-                            <p class="subtitle">A novel model of supervised clustering using sentiment and contextual analysis for fake news detection. <em>IEEE Intl. Conference on Multimedia Processing.</em></p>
+
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-period">Jan 2014 &ndash; Apr 2014</div>
+                            <div class="tl-role">Java Developer</div>
+                            <div class="tl-org">Vforce Global</div>
+                            <div class="tl-desc">Developed a Vehicle Showroom Inventory Management System from the ground up using Java.</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 12 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Resource Scheduling &amp; Conflict Management</h5>
-                            <p class="subtitle">An efficient algorithm in project management for resource scheduling and conflict management. <em>IEEE INOCON 2020.</em></p>
-                        </div>
+
+                <!-- Right: Speaking / Committee impact -->
+                <div class="col-lg-5">
+                    <p class="eyebrow mb-3">Sessions, Panels &amp; Committees</p>
+
+                    <div class="impact-chip">
+                        <div class="big">11</div>
+                        <div class="desc"><strong>Keynote sessions</strong> at International Conferences<br><span style="font-size:.78rem;color:#6c757d;">Including 6 keynotes for IEEE</span></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 12 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Cyber Defense Mechanisms</h5>
-                            <p class="subtitle">Cyber defense mechanisms: security, privacy, and challenges. <em>CRC Press.</em></p>
-                        </div>
+                    <div class="impact-chip">
+                        <div class="big">4</div>
+                        <div class="desc"><strong>Session &amp; TPC Chair</strong> roles<br><span style="font-size:.78rem;color:#6c757d;">At International IEEE &amp; Springer Conferences</span></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2015 &middot; 12 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Encryption via Encoded Multiplier</h5>
-                            <p class="subtitle">An encryption technique based upon encoded multiplier with controlled generation of random numbers. <em>Intl. Journal of Computer Network and Information Security.</em></p>
-                        </div>
+                    <div class="impact-chip">
+                        <div class="big">12</div>
+                        <div class="desc"><strong>Reviewer</strong> for International Conferences<br><span style="font-size:.78rem;color:#6c757d;">IEEE &amp; Springer venues</span></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-file text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">2020 &middot; 11 Citations</h6>
-                            <h5 class="mb-3 card-title text-dark">Cloud Security in Hyper-Scalers</h5>
-                            <p class="subtitle">Study of cloud security in hyper-scalers. <em>Intl. Conference on Computing for Sustainable Global Development (INDIACom).</em></p>
-                        </div>
+                    <div class="impact-chip">
+                        <div class="big">25+</div>
+                        <div class="desc"><strong>Conferences</strong> spoken at globally<br><span style="font-size:.78rem;color:#6c757d;">Across research and industry platforms</span></div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card mb-5">
-                        <div class="card-header has-icon">
-                            <i class="ti-link text-danger" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h6 class="title text-danger">Full Bibliography</h6>
-                            <h5 class="mb-3 card-title text-dark">All Published Research</h5>
-                            <p class="subtitle">View the complete list of publications, citation metrics, and co-authorship network.</p>
-                            <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-sm btn-outline-danger mt-2 mr-2">Google Scholar</a>
-                            <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="btn btn-sm btn-outline-danger mt-2">IEEE Xplore</a>
-                        </div>
+                    <div class="impact-chip">
+                        <div class="big">150+</div>
+                        <div class="desc"><strong>Colleagues mentored</strong> in Agile transformation<br><span style="font-size:.78rem;color:#6c757d;">As Agile Coach at SAP Labs India</span></div>
+                    </div>
+
+                    <div class="mt-4 p-4" style="background:#f8f9fa;border-radius:12px;border-left:3px solid var(--accent);">
+                        <p class="eyebrow mb-2">SAP Internal Roles</p>
+                        <p class="subtitle mb-1"><strong>Core Member &amp; Mentor</strong> — SAP techNxt Technical Research Program, SAP Labs India (2020–2022)</p>
+                        <p class="subtitle mb-0"><strong>Co-Lead</strong> — Innovation &amp; Publications, SAP Application Security Forum, SAP Labs India (2020–2022)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speaking & Portfolio Section -->
-    <section class="section bg-custom-gray" id="portfolio">
+    <!-- ══ RESEARCH PUBLICATIONS ════════════════════════════ -->
+    <section class="section section-lg bg-custom-gray" id="research">
         <div class="container">
-            <h1 class="mb-5"><span class="text-danger">Speaking</span> &amp; Portfolio</h1>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <p class="eyebrow">52 Papers &middot; 282+ Citations &middot; h-index 10</p>
+                    <h2 class="font-weight-bold">Selected <span class="text-danger">Publications</span></h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">IEEE Transactions on Artificial Intelligence &middot; 2024</div>
+                        <div class="pub-title">A Novel Technique of Synthetic Data Generation for Asset Administration Shells in Industry 4.0 Scenarios</div>
+                        <div class="pub-meta">Vol. 5, No. 10, pp. 5258–5266, Oct. 2024<br>DOI: <a href="https://doi.org/10.1109/TAI.2024.3409516" target="_blank" class="text-accent">10.1109/TAI.2024.3409516</a></div>
+                        <div class="mt-2"><span class="pub-badge">IEEE TAI</span><span class="pub-badge">Industry 4.0</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">IEEE Engineering Management Review &middot; 2025</div>
+                        <div class="pub-title">Bridging Analytics and Interoperability: A Standardized Digital Twin Solution for Enhanced Enterprise Resource Planning</div>
+                        <div class="pub-meta">DOI: <a href="https://doi.org/10.1109/EMR.2025.3641993" target="_blank" class="text-accent">10.1109/EMR.2025.3641993</a></div>
+                        <div class="mt-2"><span class="pub-badge">IEEE EMR</span><span class="pub-badge">Digital Twin</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">IEEE Engineering Management Review &middot; 2024</div>
+                        <div class="pub-title">A Comprehensive Machine Learning Framework for Evaluating Agility of a Software Development Organization</div>
+                        <div class="pub-meta">DOI: <a href="https://doi.org/10.1109/EMR.2024.3487007" target="_blank" class="text-accent">10.1109/EMR.2024.3487007</a></div>
+                        <div class="mt-2"><span class="pub-badge">IEEE EMR</span><span class="pub-badge">ML &amp; Agility</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">IEEE PDGC &middot; 2022</div>
+                        <div class="pub-title">Enabling Cost-Effective Inspection and Failure Detection of Spare Parts in Industry 4.0</div>
+                        <div class="pub-meta">pp. 594–599 · DOI: <a href="https://doi.org/10.1109/PDGC56933.2022.10053273" target="_blank" class="text-accent">10.1109/PDGC56933.2022.10053273</a></div>
+                        <div class="mt-2"><span class="pub-badge">IEEE</span><span class="pub-badge">Industry 4.0</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">Global Transitions Proceedings &middot; 2022 &middot; 23 Citations</div>
+                        <div class="pub-title">An Efficient Technique of Resource Scheduling in Cloud Using Graph Coloring Algorithm</div>
+                        <div class="pub-meta">High-citation work on cloud resource optimization and scheduling.</div>
+                        <div class="mt-2"><span class="pub-badge">Cloud</span><span class="pub-badge">Algorithms</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">Intl. Conference on Disruptive Technologies &middot; 2021 &middot; 20 Citations</div>
+                        <div class="pub-title">A Study on Chaos Engineering for Improving Cloud Software Quality and Reliability</div>
+                        <div class="pub-meta">Explores chaos engineering principles applied to enterprise cloud platforms.</div>
+                        <div class="mt-2"><span class="pub-badge">Cloud Quality</span><span class="pub-badge">SRE</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">IEEE INOCON &middot; 2020 &middot; 12 Citations</div>
+                        <div class="pub-title">An Efficient Algorithm in Project Management for Resource Scheduling and Conflict Management Using Graph Coloring Technique</div>
+                        <div class="pub-meta">DOI: <a href="https://doi.org/10.1109/INOCON50539.2020.9298193" target="_blank" class="text-accent">10.1109/INOCON50539.2020.9298193</a></div>
+                        <div class="mt-2"><span class="pub-badge">IEEE</span><span class="pub-badge">Project Mgmt</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card">
+                        <div class="pub-venue">ISPMA &middot; IIM Bangalore &middot; 2023</div>
+                        <div class="pub-title">Unlocking the Potential of a Product using Functional Usage Measurement</div>
+                        <div class="pub-meta">Presented at the Software Product Management Summit, ISPMA, IIM Bangalore, March 2023. Co-authored with D. Padmanabha.</div>
+                        <div class="mt-2"><span class="pub-badge">Product Mgmt</span><span class="pub-badge">Analytics</span></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="pub-card" style="justify-content:space-between;">
+                        <div>
+                            <div class="pub-venue">Full Bibliography</div>
+                            <div class="pub-title">All 52 Published Works</div>
+                            <p class="pub-meta">View the complete list of publications, citation metrics, and co-authorship network. Includes IEEE, Springer, and CRC Press works.</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-sm btn-danger btn-rounded d-block mb-2">Google Scholar</a>
+                            <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="btn btn-sm btn-outline-danger btn-rounded d-block">IEEE Xplore</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ SPEAKING & PORTFOLIO ══════════════════════════════ -->
+    <section class="section section-lg" id="portfolio">
+        <div class="container">
+            <p class="eyebrow">Keynotes, Interviews &amp; Thought Leadership</p>
+            <h2 class="font-weight-bold mb-5">Speaking <span class="text-danger">&amp; Portfolio</span></h2>
             <div class="portfolio">
                 <div class="filters">
-                    <a href="#" data-filter=".new" class="active">
-                        <center>All Activities</center>
-                    </a>
-                    <a href="#" data-filter=".advertising">
-                        <center>Product Management</center>
-                    </a>
-                    <a href="#" data-filter=".branding">
-                        <center>Research</center>
-                    </a>
-                    <a href="#" data-filter=".web">
-                        <center>Thought Leadership</center>
-                    </a>
+                    <a href="#" data-filter=".new" class="active"><center>All</center></a>
+                    <a href="#" data-filter=".advertising"><center>Product Leadership</center></a>
+                    <a href="#" data-filter=".branding"><center>Research</center></a>
+                    <a href="#" data-filter=".web"><center>Thought Leadership</center></a>
                 </div>
                 <div class="portfolio-container">
                     <div class="col-md-6 col-lg-4 web new">
@@ -371,14 +577,14 @@
                                 <a class="img-popup" href="assets/imgs/web-2.jpg"></a>
                                 <div class="text-holder">
                                     <h6 class="title">TGV Podcast</h6>
-                                    <a href="https://youtu.be/iSBdDAC4MpE" target="_blank"><p class="subtitle">Interview: Importance of Research in Industry</p></a>
+                                    <a href="https://youtu.be/iSBdDAC4MpE" target="_blank"><p class="subtitle">Top-10 Interview: Importance of Research in Industry</p></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 web new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/web-3.jpg" class="img-fluid" alt="The Wandering Geek on YouTube">
+                            <img src="assets/imgs/web-3.jpg" class="img-fluid" alt="The Wandering Geek YouTube">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/web-3.jpg"></a>
                                 <div class="text-holder">
@@ -390,60 +596,60 @@
                     </div>
                     <div class="col-md-6 col-lg-4 branding new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/branding-1.jpg" class="img-fluid" alt="Cloud Resource Scheduling Paper">
+                            <img src="assets/imgs/branding-1.jpg" class="img-fluid" alt="IEEE TAI 2024">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/branding-1.jpg"></a>
                                 <div class="text-holder">
-                                    <h6 class="title">Cloud Research 2022</h6>
-                                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank"><p class="subtitle">Resource Scheduling in Cloud via Graph Coloring Algorithm</p></a>
+                                    <h6 class="title">IEEE TAI 2024</h6>
+                                    <a href="https://doi.org/10.1109/TAI.2024.3409516" target="_blank"><p class="subtitle">Synthetic Data Generation for Asset Administration Shells</p></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 branding new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/branding-2.jpg" class="img-fluid" alt="Chaos Engineering Research">
+                            <img src="assets/imgs/branding-2.jpg" class="img-fluid" alt="IEEE Engineering Management Review">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/branding-2.jpg"></a>
                                 <div class="text-holder">
-                                    <h6 class="title">Chaos Engineering 2021</h6>
-                                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank"><p class="subtitle">Cloud Software Quality &amp; Reliability</p></a>
+                                    <h6 class="title">IEEE Eng. Mgmt. Review</h6>
+                                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank"><p class="subtitle">Digital Twin Solution for Enterprise Resource Planning</p></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 branding new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/branding-3.jpg" class="img-fluid" alt="Haphazard Reality Revisited Book">
+                            <img src="assets/imgs/branding-3.jpg" class="img-fluid" alt="Google Scholar Profile">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/branding-3.jpg"></a>
                                 <div class="text-holder">
-                                    <h6 class="title">Co-Authored Book</h6>
-                                    <p class="subtitle">Haphazard Reality Revisited: Half a Century of Random Thoughts</p>
+                                    <h6 class="title">Google Scholar</h6>
+                                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank"><p class="subtitle">Complete Bibliography &mdash; 52 Publications</p></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 advertising new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-1.jpg" class="img-fluid" alt="SAP Labs India Research">
+                            <img src="assets/imgs/advertising-1.jpg" class="img-fluid" alt="SAP Head of Research">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/advertising-1.jpg"></a>
                                 <div class="text-holder">
                                     <h6 class="title">SAP Labs India</h6>
-                                    <p class="subtitle">Head, Research &amp; Industry-Academia Partnerships — driving innovation at the intersection of enterprise software and academia.</p>
+                                    <p class="subtitle">Head, Research &amp; Industry-Academia Partnerships — MD&rsquo;s Office</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 advertising new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-2.jpg" class="img-fluid" alt="Cloud ERP Product Management">
+                            <img src="assets/imgs/advertising-2.jpg" class="img-fluid" alt="S/4HANA Product Management">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/advertising-2.jpg"></a>
                                 <div class="text-holder">
-                                    <h6 class="title">Cloud ERP Innovation</h6>
-                                    <p class="subtitle">Product management expertise in enterprise Cloud ERP, Industry 4.0 solutions, and intelligent enterprise technologies.</p>
+                                    <h6 class="title">S/4HANA Cloud ERP</h6>
+                                    <p class="subtitle">Product Manager &amp; Location Head for India&rsquo;s 32-PM Public Cloud ERP team at SAP</p>
                                 </div>
                             </div>
                         </div>
@@ -453,68 +659,213 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ══ EDUCATION ════════════════════════════════════════ -->
+    <section class="section section-lg bg-custom-gray" id="education">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <p class="eyebrow">Academic Credentials</p>
+                    <h2 class="font-weight-bold mb-4">Education <span class="text-danger">&amp; Qualifications</span></h2>
+                    <span class="line mb-5"></span>
+
+                    <div class="edu-card">
+                        <div class="edu-degree">Doctor of Philosophy (PhD)</div>
+                        <div class="edu-school">Centre for Computational &amp; Data Sciences &middot; IIT Kharagpur</div>
+                        <div class="edu-meta">July 2021 &ndash; Jan 2026 &middot; Kharagpur, India &middot; GPA: 7.94</div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-degree">M.Tech. &mdash; Software Engineering</div>
+                        <div class="edu-school">BITS Pilani</div>
+                        <div class="edu-meta">Aug 2015 &ndash; July 2019 &middot; Bangalore, India &middot; GPA: 7.47 &middot; Dissertation: Excellent</div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-degree">BCA &mdash; Computer Science Applications</div>
+                        <div class="edu-school">NSHM College of Management &amp; Technology, Kolkata</div>
+                        <div class="edu-meta">July 2012 &ndash; May 2015 &middot; Kolkata, India &middot; CGPA: 8.78</div>
+                    </div>
+                </div>
+
+                <!-- Skills + Certifications -->
+                <div class="col-lg-7 pl-lg-5">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <p class="eyebrow">Core Competencies</p>
+                            <h4 class="font-weight-bold mb-3">Skills &amp; <span class="text-danger">Expertise</span></h4>
+
+                            <div class="mb-3">
+                                <div class="skill-group-label">Product Leadership</div>
+                                <span class="skill-tag ft">Product Analytics</span>
+                                <span class="skill-tag ft">Product Strategy</span>
+                                <span class="skill-tag ft">Roadmap Planning</span>
+                                <span class="skill-tag">Cross-Functional Leadership</span>
+                                <span class="skill-tag">Telemetry &amp; Adoption</span>
+                                <span class="skill-tag">People Management</span>
+                                <span class="skill-tag">UX Research</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="skill-group-label">Technology &amp; Engineering</div>
+                                <span class="skill-tag ft">SAP BTP</span>
+                                <span class="skill-tag ft">S/4HANA Cloud</span>
+                                <span class="skill-tag">SAP UI5 / Fiori</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">REST / OData</span>
+                                <span class="skill-tag">ABAP</span>
+                                <span class="skill-tag">CAP Model</span>
+                                <span class="skill-tag">Cloud Architecture</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="skill-group-label">Research &amp; Academia</div>
+                                <span class="skill-tag ft">Cloud ERP</span>
+                                <span class="skill-tag ft">Industry 4.0</span>
+                                <span class="skill-tag ft">AI / ML</span>
+                                <span class="skill-tag">Design Thinking</span>
+                                <span class="skill-tag">Digital Twins</span>
+                                <span class="skill-tag">Cybersecurity</span>
+                                <span class="skill-tag">Agile Coaching</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <p class="eyebrow">Verified Credentials</p>
+                            <h4 class="font-weight-bold mb-3"><span class="text-danger">Certifications</span></h4>
+
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-bar-chart"></i></div>
+                                <div><div class="cert-name">Product Analytics Certification</div><div class="cert-issuer">Pendo.ai &middot; Verified Badge</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-rocket"></i></div>
+                                <div><div class="cert-name">Product-Led Certification</div><div class="cert-issuer">Pendo.ai &middot; Verified Badge</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-layers-alt"></i></div>
+                                <div><div class="cert-name">Product Management Curriculum</div><div class="cert-issuer">SAP &middot; Verified Badge</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-pencil-alt"></i></div>
+                                <div><div class="cert-name">Enterprise Design Thinking Practitioner</div><div class="cert-issuer">IBM &middot; Verified Badge</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-loop"></i></div>
+                                <div><div class="cert-name">Scrum Trainer &mdash; Methodology Skills</div><div class="cert-issuer">SAP &middot; Verified Badge</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-pulse"></i></div>
+                                <div><div class="cert-name">Advanced Course in Machine Learning using Python</div><div class="cert-issuer">IIT Madras</div></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon"><i class="ti-world"></i></div>
+                                <div><div class="cert-name">Getting Started with Google Analytics</div><div class="cert-issuer">Coursera / Google &middot; Verified Certificate</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ACHIEVEMENTS ═════════════════════════════════════ -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <p class="eyebrow">Recognition</p>
+                    <h2 class="font-weight-bold">Awards &amp; <span class="text-danger">Achievements</span></h2>
+                    <span class="line mb-4"></span>
+                    <p style="color:#6c757d;">A track record of recognition spanning industry awards, national pitching challenges, academic best-paper awards, and internal SAP leadership accolades — spanning innovation, mentorship, and customer centricity.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-chip"><span class="num">7×</span><span class="lbl">Thought Leadership Champion</span></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-chip"><span class="num">3</span><span class="lbl">Best Paper Awards</span></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-chip"><span class="num">3</span><span class="lbl">National Pitch Awards</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <ul class="ach-list">
+                        <li><span class="ach-strong">Nominated for Indian Youth Engineering Icon of the Year</span> at the IET Awards</li>
+                        <li><span class="ach-strong">7&times; Thought Leadership Champion</span> at SAP Labs India</li>
+                        <li><span class="ach-strong">Award for Thought Leadership on Research</span> by Sindhu Gangadharan, Managing Director, SAP Labs India</li>
+                        <li><span class="ach-strong">61 awards</span> at SAP for Innovation, Customer Centricity, Mentorship, Startup Co-innovation, and Leadership</li>
+                        <li><span class="ach-strong">3 Best Paper Awards</span> in International Research Platforms</li>
+                        <li><span class="ach-strong">3 accolades</span> at National-level pitching and product challenges</li>
+                        <li><span class="ach-strong">Top 8 Startup</span> in SAP.iO&rsquo;s Venture Challenge for a product on Employee&ndash;Manager Relationship</li>
+                        <li><span class="ach-strong">Leadership Award</span> by Global Head of Vocational Training, Startup Studio, and Innovation@SLI for leading &amp; mentoring the project team</li>
+                        <li><span class="ach-strong">2 Customer Go-Live Appreciations</span> for customer-first mentality during S/4 and Business Networks deployments</li>
+                        <li><span class="ach-strong">Featured in TGV&rsquo;s Top-10 Interviews</span> among 150+ episodes — &ldquo;Importance of Research in Technical Roles&rdquo;</li>
+                        <li><span class="ach-strong">51 external technical research publications</span> across IEEE, Springer, and CRC Press</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ CONTACT ══════════════════════════════════════════ -->
     <div class="section contact" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Get in touch with <a href="mailto:write2sumand@gmail.com">Dr. Suman De</a></h4>
-                        <p class="text-muted mt-3">For research collaborations, speaking engagements, or thought leadership inquiries, please reach out via email at <a href="mailto:write2sumand@gmail.com">write2sumand@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank">LinkedIn</a>.</p>
+                        <p class="text-muted mt-3">For research collaborations, speaking engagements, industry-academia partnerships, or thought leadership inquiries — reach out via email or connect on LinkedIn.</p>
+                        <div class="mt-4">
+                            <a href="mailto:write2sumand@gmail.com" class="btn btn-danger btn-rounded mr-2 mb-2"><i class="ti-email pr-2"></i>write2sumand@gmail.com</a>
+                            <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-danger btn-rounded mb-2"><i class="ti-linkedin pr-2"></i>Connect on LinkedIn</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="contact-info-card">
                         <h4 class="contact-title">Get in touch</h4>
                         <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-map-alt icon-md"></i>
-                            </div>
+                            <div class="col-1 pt-1 mr-1"><i class="ti-map-alt icon-md"></i></div>
                             <div class="col-10">
-                                <h6 class="d-inline">Address:<br> <span class="text-muted">SAP Labs India, #138 EPIP Zone, Whitefield, Bangalore &mdash; 560066.</span></h6>
+                                <h6 class="d-inline">Address:<br><span class="text-muted">SAP Labs India, #138 EPIP Zone, Whitefield, Bangalore &mdash; 560066.</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-envelope icon-md"></i>
-                            </div>
+                            <div class="col-1 pt-1 mr-1"><i class="ti-envelope icon-md"></i></div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email:<br> <span class="text-muted">write2sumand@gmail.com</span></h6>
+                                <h6 class="d-inline">Email:<br><span class="text-muted">write2sumand@gmail.com</span></h6>
                             </div>
                         </div>
                         <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-							<li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-							<li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com" target="_blank"><i class="ti-google" aria-hidden="true"></i></a></li>
-							<li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-							<li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-							<li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com"><i class="ti-google"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin"></i></a></li>
+                            <li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- ══ FOOTER ════════════════════════════════════════════ -->
     <footer class="footer py-3">
         <div class="container">
             <p class="small mb-0 text-light">
-                &copy; <script>document.write(new Date().getFullYear())</script> Dr. Suman De &mdash; Built with <i class="ti-heart text-danger"></i> using <a href="http://devcrud.com" target="_blank"><span class="text-danger" title="Bootstrap 4 Themes and Dashboards">DevCRUD</span></a>
+                &copy; <script>document.write(new Date().getFullYear())</script> Dr. Suman De &mdash; Built with <i class="ti-heart text-danger"></i> using <a href="http://devcrud.com" target="_blank"><span class="text-danger">DevCRUD</span></a>
             </p>
         </div>
     </footer>
 
-	<!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Isotope  -->
     <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
-
-    <!-- JohnDoe js -->
     <script src="assets/js/johndoe.js"></script>
-
 </body>
 </html>
