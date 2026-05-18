@@ -263,8 +263,15 @@
         .skill-tag.ft { background: rgba(232,69,90,.08); border-color: rgba(232,69,90,.4); color: var(--accent); font-weight: 600; }
 
         /* ── Certifications ──────────────────────────────── */
-        .cert-item { display: flex; align-items: center; padding: .7rem 0; border-bottom: 1px solid #f1f3f5; }
-        .cert-item:last-child { border-bottom: none; }
+        .cert-item {
+            display: flex; align-items: flex-start;
+            padding: .7rem .9rem;
+            background: #fff; border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: .55rem;
+            transition: box-shadow .2s;
+        }
+        .cert-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); }
         .cert-icon {
             width: 36px; height: 36px; border-radius: 8px;
             background: rgba(232,69,90,.08); color: var(--accent);
@@ -864,99 +871,127 @@
                             <p class="eyebrow">Verified Credentials</p>
                             <h4 class="font-weight-bold mb-3"><span class="text-accent">Certifications</span></h4>
 
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-star-half"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/c7001b22-bde8-49d1-aa1c-0300e592845d" target="_blank" class="cert-link">Product Discovery Certification</a></div>
-                                    <div class="cert-issuer">Pendo &middot; Jun 2025</div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-star-half"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/c7001b22-bde8-49d1-aa1c-0300e592845d" target="_blank" class="cert-link">Product Discovery Certification</a></div>
+                                            <div class="cert-issuer">Pendo &middot; Jun 2025</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-bar-chart"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/86064a6d-9581-4526-b3be-8d2699b08043" target="_blank" class="cert-link">Product Analytics Certification</a></div>
-                                    <div class="cert-issuer">Pendo &middot; Apr 2024</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-bar-chart"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/86064a6d-9581-4526-b3be-8d2699b08043" target="_blank" class="cert-link">Product Analytics Certification</a></div>
+                                            <div class="cert-issuer">Pendo &middot; Apr 2024</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-rocket"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/06e9230a-84cd-4f63-9d55-34be8174fbe5" target="_blank" class="cert-link">Product-led Certification</a></div>
-                                    <div class="cert-issuer">Pendo &middot; Dec 2022</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-rocket"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/06e9230a-84cd-4f63-9d55-34be8174fbe5" target="_blank" class="cert-link">Product-led Certification</a></div>
+                                            <div class="cert-issuer">Pendo &middot; Dec 2022</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-light-bulb"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/a233d107-693f-4773-81ae-457090567817" target="_blank" class="cert-link">Exploring the SAP Business AI Portfolio</a></div>
-                                    <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-light-bulb"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/a233d107-693f-4773-81ae-457090567817" target="_blank" class="cert-link">Exploring the SAP Business AI Portfolio</a></div>
+                                            <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-cloud"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/9a3642e7-9e5e-46c7-b40d-0e1712f657bb" target="_blank" class="cert-link">Exploring SAP&rsquo;s Cloud Strategy</a></div>
-                                    <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-cloud"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/9a3642e7-9e5e-46c7-b40d-0e1712f657bb" target="_blank" class="cert-link">Exploring SAP&rsquo;s Cloud Strategy</a></div>
+                                            <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-briefcase"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/38ab067b-b617-419c-8004-5e6e6e7c954c" target="_blank" class="cert-link">Positioning &amp; Selling SAP Cloud ERP and RISE with SAP</a></div>
-                                    <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-briefcase"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/38ab067b-b617-419c-8004-5e6e6e7c954c" target="_blank" class="cert-link">Positioning &amp; Selling SAP Cloud ERP and RISE with SAP</a></div>
+                                            <div class="cert-issuer">SAP &middot; Sep 2024</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-settings"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/ec95979b-4263-4aff-9121-ebba01c049f3" target="_blank" class="cert-link">Technology Skills &mdash; Multi-Dimensional Engineers Program</a></div>
-                                    <div class="cert-issuer">SAP &middot; Jun 2023</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-settings"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/ec95979b-4263-4aff-9121-ebba01c049f3" target="_blank" class="cert-link">Technology Skills &mdash; Multi-Dimensional Engineers Program</a></div>
+                                            <div class="cert-issuer">SAP &middot; Jun 2023</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-layers-alt"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/4ce2999a-2895-434c-b735-279b1679981f" target="_blank" class="cert-link">Product Knowledge &mdash; Product Management Curriculum</a></div>
-                                    <div class="cert-issuer">SAP &middot; Jun 2022</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-layers-alt"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/4ce2999a-2895-434c-b735-279b1679981f" target="_blank" class="cert-link">Product Knowledge &mdash; Product Management Curriculum</a></div>
+                                            <div class="cert-issuer">SAP &middot; Jun 2022</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-user"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/cd5f6c4f-24c8-4580-a43a-61942517f8a7" target="_blank" class="cert-link">Business Skills &mdash; Nascent Leadership Program</a></div>
-                                    <div class="cert-issuer">SAP &middot; Sep 2022</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-user"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/cd5f6c4f-24c8-4580-a43a-61942517f8a7" target="_blank" class="cert-link">Business Skills &mdash; Nascent Leadership Program</a></div>
+                                            <div class="cert-issuer">SAP &middot; Sep 2022</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-book"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/47183e10-3398-4b84-83f5-a77c70623279" target="_blank" class="cert-link">Methodology Knowledge &mdash; Product Management Academy</a></div>
-                                    <div class="cert-issuer">SAP &middot; Sep 2022</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-book"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/47183e10-3398-4b84-83f5-a77c70623279" target="_blank" class="cert-link">Methodology Knowledge &mdash; Product Management Academy</a></div>
+                                            <div class="cert-issuer">SAP &middot; Sep 2022</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-loop"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/530168e6-89c5-4727-b498-c3da97d8d49a" target="_blank" class="cert-link">Methodology Skills &mdash; Scrum Trainer</a></div>
-                                    <div class="cert-issuer">SAP &middot; Aug 2021</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-loop"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/530168e6-89c5-4727-b498-c3da97d8d49a" target="_blank" class="cert-link">Methodology Skills &mdash; Scrum Trainer</a></div>
+                                            <div class="cert-issuer">SAP &middot; Aug 2021</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-pencil-alt"></i></div>
-                                <div>
-                                    <div class="cert-name"><a href="https://www.credly.com/badges/8d3a49c8-a570-458c-9906-57a07f48d764" target="_blank" class="cert-link">Enterprise Design Thinking Practitioner</a></div>
-                                    <div class="cert-issuer">IBM &middot; Jun 2022</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-pencil-alt"></i></div>
+                                        <div>
+                                            <div class="cert-name"><a href="https://www.credly.com/badges/8d3a49c8-a570-458c-9906-57a07f48d764" target="_blank" class="cert-link">Enterprise Design Thinking Practitioner</a></div>
+                                            <div class="cert-issuer">IBM &middot; Jun 2022</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-icon"><i class="ti-pulse"></i></div>
-                                <div>
-                                    <div class="cert-name">Advanced Course in Machine Learning using Python</div>
-                                    <div class="cert-issuer">IIT Madras</div>
+                                <div class="col-sm-6">
+                                    <div class="cert-item">
+                                        <div class="cert-icon"><i class="ti-pulse"></i></div>
+                                        <div>
+                                            <div class="cert-name">Advanced Course in Machine Learning using Python</div>
+                                            <div class="cert-issuer">IIT Madras</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="mt-3 pt-2" style="border-top:1px solid var(--border);">
+                            <div class="mt-2 pt-2" style="border-top:1px solid var(--border);">
                                 <a href="https://www.credly.com/users/suman-de.f768fe1e/badges" target="_blank" style="font-size:.8rem;font-weight:600;color:var(--accent);text-decoration:none;">
                                     <i class="ti-new-window" style="font-size:.72rem;"></i>&nbsp;View all 19 badges on Credly
                                 </a>
