@@ -6,65 +6,165 @@
     <meta name="description" content="Dr. Suman De — Head of Research &amp; Industry-Academia Partnerships at SAP Labs India. PhD from IIT Kharagpur. 11 years at SAP. 52 publications. Keynote Speaker.">
     <meta name="author" content="Dr. Suman De">
     <title>Dr. Suman De — Product Leader | Research Scientist | Keynote Speaker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/johndoe.css">
     <style>
-        /* ── Custom premium layer ───────────────────────────── */
-        :root { --accent: #F85C70; --dark-bg: #1a1d23; }
-
-        /* Header credential chips */
-        .header-creds { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.25rem; }
-        .cred-chip {
-            background: rgba(255,255,255,.12);
-            border: 1px solid rgba(255,255,255,.28);
-            color: rgba(255,255,255,.92);
-            padding: .28rem .85rem;
-            border-radius: 50px;
-            font-size: .78rem;
-            font-weight: 600;
-            letter-spacing: .5px;
+        /* ── Design tokens ───────────────────────────────── */
+        :root {
+            --accent:   #E8455A;
+            --navy:     #0f1923;
+            --navy2:    #1a2535;
+            --off-white:#f5f6f8;
+            --text:     #212529;
+            --muted:    #6c757d;
+            --border:   #e9ecef;
         }
-        .cred-chip i { margin-right: .3rem; }
 
-        /* ── About – premium two-column ─────────────────── */
-        .about-premium { padding: 72px 0; }
-        .profile-photo {
-            width: 270px; height: 270px;
-            object-fit: cover; object-position: top center;
-            border-radius: 16px;
-            box-shadow: 0 24px 60px rgba(0,0,0,.14);
+        /* ── Global font override ─────────────────────────── */
+        body { font-family: 'Inter', sans-serif !important; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif !important; }
+
+        /* ── Topnav (dark, always on top) ────────────────── */
+        .sd-topnav {
+            background: var(--navy) !important;
+            padding: .55rem 0;
+            z-index: 1050;
         }
-        .photo-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: .3rem .9rem;
-            border-radius: 50px;
-            font-size: .72rem;
+        .sd-topnav .navbar-brand {
+            font-family: 'Inter', sans-serif !important;
             font-weight: 700;
-            letter-spacing: .5px;
-            margin-top: .75rem;
-            box-shadow: 0 4px 16px rgba(248,92,112,.35);
+            font-size: 1rem;
+            color: #fff !important;
+            letter-spacing: .3px;
         }
+        .sd-topnav .nav-link {
+            color: rgba(255,255,255,.75) !important;
+            font-size: .82rem;
+            font-weight: 500;
+            padding: .35rem .7rem !important;
+            transition: color .2s;
+        }
+        .sd-topnav .nav-link:hover { color: #fff !important; }
+        .sd-topnav .navbar-toggler { border-color: rgba(255,255,255,.3); }
+        .sd-topnav .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* ── Masthead (Executive Split) ───────────────────── */
+        .sd-masthead {
+            background: var(--navy);
+            min-height: 420px;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .sd-masthead::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(232,69,90,.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .sd-mast-eyebrow {
+            font-family: 'Inter', sans-serif !important;
+            font-size: .68rem; font-weight: 700;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--accent); margin-bottom: .6rem;
+        }
+        .sd-mast-name {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800; color: #fff;
+            line-height: 1.1; margin-bottom: .55rem;
+        }
+        .sd-mast-title {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 1.05rem; font-weight: 500;
+            color: rgba(255,255,255,.8); margin-bottom: .25rem;
+        }
+        .sd-mast-org {
+            font-family: 'Inter', sans-serif !important;
+            font-size: .875rem; color: rgba(255,255,255,.5);
+            margin-bottom: 1.4rem;
+        }
+        .sd-mast-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.6rem; }
+        .sd-chip {
+            font-family: 'Inter', sans-serif !important;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.18);
+            color: rgba(255,255,255,.85);
+            padding: .22rem .75rem;
+            border-radius: 50px;
+            font-size: .72rem; font-weight: 600;
+            letter-spacing: .4px;
+            white-space: nowrap;
+        }
+        .sd-chip i { margin-right: .3rem; font-size: .7rem; }
+        .sd-mast-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.6rem; }
+        .sd-btn-primary {
+            font-family: 'Inter', sans-serif !important;
+            background: var(--accent); border: 2px solid var(--accent);
+            color: #fff; padding: .45rem 1.3rem;
+            border-radius: 50px; font-size: .82rem; font-weight: 600;
+            text-decoration: none; transition: all .2s;
+            display: inline-flex; align-items: center; gap: .4rem;
+        }
+        .sd-btn-primary:hover { background: #d03450; border-color: #d03450; color: #fff; text-decoration: none; }
+        .sd-btn-ghost {
+            font-family: 'Inter', sans-serif !important;
+            background: transparent; border: 2px solid rgba(255,255,255,.3);
+            color: rgba(255,255,255,.85); padding: .45rem 1.3rem;
+            border-radius: 50px; font-size: .82rem; font-weight: 600;
+            text-decoration: none; transition: all .2s;
+            display: inline-flex; align-items: center; gap: .4rem;
+        }
+        .sd-btn-ghost:hover { border-color: rgba(255,255,255,.65); color: #fff; text-decoration: none; }
+        .sd-mast-socials { display: flex; gap: .7rem; flex-wrap: wrap; }
+        .sd-social-link {
+            width: 34px; height: 34px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.2);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,.65); font-size: .8rem;
+            text-decoration: none; transition: all .2s;
+        }
+        .sd-social-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+        /* Photo column in masthead */
+        .sd-mast-photo-wrap {
+            display: flex; align-items: center; justify-content: center;
+            height: 100%;
+        }
+        .sd-mast-photo {
+            width: 300px; height: 360px;
+            object-fit: cover; object-position: top center;
+            border-radius: 12px;
+            box-shadow: 0 32px 80px rgba(0,0,0,.45);
+            border: 3px solid rgba(255,255,255,.08);
+        }
+        @media (max-width: 991.98px) {
+            .sd-masthead { padding: 50px 0 40px; }
+            .sd-mast-photo { width: 200px; height: 240px; margin-top: 2rem; }
+        }
+
+        /* ── Eyebrow shared ──────────────────────────────── */
         .eyebrow {
-            font-size: .72rem; font-weight: 700; letter-spacing: 2px;
+            font-family: 'Inter', sans-serif !important;
+            font-size: .68rem; font-weight: 700; letter-spacing: 2px;
             text-transform: uppercase; color: var(--accent); margin-bottom: .3rem;
         }
-        .stat-chip {
-            background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px;
-            padding: .85rem .75rem; text-align: center; margin-bottom: .75rem;
-        }
-        .stat-chip .num { font-size: 1.65rem; font-weight: 800; color: var(--accent); line-height: 1; display: block; }
-        .stat-chip .lbl { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #6c757d; }
 
-        /* ── Impact bar ──────────────────────────────────── */
-        .impact-bar { background: var(--dark-bg); }
-        .impact-num { font-size: 2.75rem; font-weight: 800; color: var(--accent); line-height: 1; }
-        .impact-lbl { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.55); margin-top: .35rem; }
-        .impact-divider { width: 1px; background: rgba(255,255,255,.1); align-self: stretch; }
+        /* ── Section spacing ─────────────────────────────── */
+        .section-lg { padding: 80px 0; }
+        .bg-off-white { background: var(--off-white); }
 
-        /* ── What I offer cards ──────────────────────────── */
-        .offer-card {
+        /* ── Text helpers ────────────────────────────────── */
+        .text-accent { color: var(--accent) !important; }
+        .btn-rounded { border-radius: 50px !important; padding-left: 1.4rem !important; padding-right: 1.4rem !important; }
+        .line { display: block; width: 48px; height: 3px; background: var(--accent); margin: .6rem 0 1.6rem; border-radius: 2px; }
+
+        /* ── About offer cards ───────────────────────────── */
+        .sd-offer-card {
             border: none; border-top: 3px solid var(--accent);
             border-radius: 0 0 10px 10px;
             padding: 2rem 1.75rem;
@@ -72,14 +172,27 @@
             box-shadow: 0 4px 24px rgba(0,0,0,.06);
             height: 100%; transition: transform .25s, box-shadow .25s;
         }
-        .offer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.10); }
+        .sd-offer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.10); }
         .offer-icon { font-size: 1.75rem; color: var(--accent); margin-bottom: .75rem; }
+
+        /* ── Stat chips ──────────────────────────────────── */
+        .stat-chip {
+            background: #f8f9fa; border: 1px solid var(--border); border-radius: 10px;
+            padding: .85rem .75rem; text-align: center; margin-bottom: .75rem;
+        }
+        .stat-chip .num { font-size: 1.65rem; font-weight: 800; color: var(--accent); line-height: 1; display: block; font-family: 'Playfair Display', serif !important; }
+        .stat-chip .lbl { font-family: 'Inter', sans-serif !important; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+
+        /* ── Impact bar ──────────────────────────────────── */
+        .impact-bar { background: var(--navy2); }
+        .impact-num { font-family: 'Playfair Display', serif !important; font-size: 2.75rem; font-weight: 800; color: var(--accent); line-height: 1; }
+        .impact-lbl { font-family: 'Inter', sans-serif !important; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.5); margin-top: .35rem; }
 
         /* ── Career timeline ─────────────────────────────── */
         .tl-wrap { position: relative; padding-left: 2.25rem; }
         .tl-wrap::before {
             content: ''; position: absolute; left: 6px; top: 8px; bottom: 0;
-            width: 2px; background: linear-gradient(to bottom, var(--accent) 0%, #dee2e6 100%);
+            width: 2px; background: linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%);
         }
         .tl-item { position: relative; margin-bottom: 2rem; }
         .tl-dot {
@@ -94,23 +207,23 @@
         }
         @keyframes tl-pulse {
             0%,100% { box-shadow: 0 0 0 3px var(--accent); }
-            50%      { box-shadow: 0 0 0 7px rgba(248,92,112,.2), 0 0 0 3px var(--accent); }
+            50%      { box-shadow: 0 0 0 7px rgba(232,69,90,.2), 0 0 0 3px var(--accent); }
         }
-        .tl-period { font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 1px; }
-        .tl-role { font-size: 1rem; font-weight: 700; color: #212529; margin-bottom: 1px; }
-        .tl-org { font-size: .875rem; color: #6c757d; margin-bottom: .4rem; }
-        .tl-desc { font-size: .845rem; color: #495057; line-height: 1.7; }
+        .tl-period { font-family: 'Inter', sans-serif !important; font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 1px; }
+        .tl-role { font-family: 'Inter', sans-serif !important; font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1px; }
+        .tl-org { font-family: 'Inter', sans-serif !important; font-size: .875rem; color: var(--muted); margin-bottom: .4rem; }
+        .tl-desc { font-family: 'Inter', sans-serif !important; font-size: .845rem; color: #495057; line-height: 1.7; }
 
-        /* Impact chips for speaking/committees */
+        /* ── Impact chips ────────────────────────────────── */
         .impact-chip {
             display: flex; align-items: center; background: #f8f9fa;
-            border: 1px solid #e9ecef; border-radius: 10px;
+            border: 1px solid var(--border); border-radius: 10px;
             padding: 1rem 1.25rem; margin-bottom: .75rem;
         }
-        .impact-chip .big { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-right: .85rem; min-width: 50px; }
-        .impact-chip .desc { font-size: .85rem; color: #495057; line-height: 1.4; }
+        .impact-chip .big { font-family: 'Playfair Display', serif !important; font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-right: .85rem; min-width: 50px; }
+        .impact-chip .desc { font-family: 'Inter', sans-serif !important; font-size: .85rem; color: #495057; line-height: 1.4; }
 
-        /* ── Publications – enhanced cards ──────────────── */
+        /* ── Publications ────────────────────────────────── */
         .pub-card {
             border: none; border-radius: 12px; background: #fff;
             padding: 1.35rem 1.5rem; margin-bottom: 1.25rem;
@@ -118,13 +231,13 @@
             display: flex; flex-direction: column;
         }
         .pub-card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.10); transform: translateY(-3px); }
-        .pub-venue { font-size: .68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
-        .pub-title { font-size: .95rem; font-weight: 700; color: #212529; line-height: 1.4; margin-bottom: .4rem; flex: 1; }
-        .pub-meta { font-size: .78rem; color: #6c757d; }
+        .pub-venue { font-family: 'Inter', sans-serif !important; font-size: .68rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+        .pub-title { font-family: 'Inter', sans-serif !important; font-size: .95rem; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: .4rem; flex: 1; }
+        .pub-meta { font-family: 'Inter', sans-serif !important; font-size: .78rem; color: var(--muted); }
         .pub-badge {
-            display: inline-block; font-size: .68rem; font-weight: 700;
+            display: inline-block; font-family: 'Inter', sans-serif !important; font-size: .68rem; font-weight: 700;
             padding: .18rem .6rem; border-radius: 50px;
-            background: rgba(248,92,112,.1); color: var(--accent); margin-right: .35rem;
+            background: rgba(232,69,90,.1); color: var(--accent); margin-right: .35rem;
         }
 
         /* ── Education ───────────────────────────────────── */
@@ -135,160 +248,177 @@
             transition: transform .25s, box-shadow .25s;
         }
         .edu-card:hover { transform: translateX(4px); box-shadow: 0 6px 24px rgba(0,0,0,.09); }
-        .edu-degree { font-size: 1rem; font-weight: 700; color: #212529; margin-bottom: 2px; }
-        .edu-school { font-size: .875rem; color: #495057; margin-bottom: 2px; }
-        .edu-meta { font-size: .75rem; color: var(--accent); font-weight: 600; }
+        .edu-degree { font-family: 'Inter', sans-serif !important; font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+        .edu-school { font-family: 'Inter', sans-serif !important; font-size: .875rem; color: #495057; margin-bottom: 2px; }
+        .edu-meta { font-family: 'Inter', sans-serif !important; font-size: .75rem; color: var(--accent); font-weight: 600; }
 
         /* ── Skills ──────────────────────────────────────── */
-        .skill-group-label { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6c757d; margin-bottom: .5rem; }
+        .skill-group-label { font-family: 'Inter', sans-serif !important; font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
         .skill-tag {
-            display: inline-block; background: #f8f9fa; border: 1px solid #e9ecef;
+            display: inline-block; font-family: 'Inter', sans-serif !important; background: #f8f9fa; border: 1px solid var(--border);
             color: #495057; padding: .28rem .75rem; border-radius: 50px;
             font-size: .82rem; margin: .2rem; transition: all .2s;
         }
         .skill-tag:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-        .skill-tag.ft { background: rgba(248,92,112,.08); border-color: rgba(248,92,112,.4); color: var(--accent); font-weight: 600; }
+        .skill-tag.ft { background: rgba(232,69,90,.08); border-color: rgba(232,69,90,.4); color: var(--accent); font-weight: 600; }
 
         /* ── Certifications ──────────────────────────────── */
         .cert-item { display: flex; align-items: center; padding: .7rem 0; border-bottom: 1px solid #f1f3f5; }
         .cert-item:last-child { border-bottom: none; }
         .cert-icon {
             width: 36px; height: 36px; border-radius: 8px;
-            background: rgba(248,92,112,.08); color: var(--accent);
+            background: rgba(232,69,90,.08); color: var(--accent);
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0; margin-right: .85rem; font-size: .9rem;
         }
-        .cert-name { font-size: .875rem; font-weight: 600; color: #212529; margin: 0; line-height: 1.25; }
-        .cert-issuer { font-size: .75rem; color: #6c757d; }
+        .cert-name { font-family: 'Inter', sans-serif !important; font-size: .875rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.25; }
+        .cert-issuer { font-family: 'Inter', sans-serif !important; font-size: .75rem; color: var(--muted); }
 
         /* ── Achievements ────────────────────────────────── */
         .ach-list { list-style: none; padding: 0; margin: 0; }
-        .ach-list li { display: flex; align-items: flex-start; padding: .6rem 0; border-bottom: 1px solid #f1f3f5; font-size: .9rem; color: #495057; }
+        .ach-list li { font-family: 'Inter', sans-serif !important; display: flex; align-items: flex-start; padding: .6rem 0; border-bottom: 1px solid #f1f3f5; font-size: .9rem; color: #495057; }
         .ach-list li:last-child { border-bottom: none; }
         .ach-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin: .45rem .75rem 0 0; }
-        .ach-strong { font-weight: 700; color: #212529; }
+        .ach-strong { font-weight: 700; color: var(--text); }
 
-        /* ── Misc tweaks ─────────────────────────────────── */
-        .btn-rounded { border-radius: 50px !important; padding-left: 1.4rem !important; padding-right: 1.4rem !important; }
-        .section-lg { padding: 80px 0; }
-        .text-accent { color: var(--accent) !important; }
+        /* ── Contact ─────────────────────────────────────── */
+        .sd-contact { background: var(--navy); }
+        .sd-contact .contact-form-card {
+            background: var(--navy2); border-radius: 12px;
+            padding: 2.5rem; border: 1px solid rgba(255,255,255,.07);
+        }
+        .sd-contact .contact-title { color: #fff; font-size: 1.5rem; margin-bottom: 0; }
+        .sd-contact .contact-title a { color: var(--accent); }
+        .sd-contact .contact-info-card {
+            background: rgba(255,255,255,.04); border-radius: 12px;
+            padding: 2rem; border: 1px solid rgba(255,255,255,.08); height: 100%;
+        }
+        .sd-contact .contact-info-card h4 { color: #fff; }
+        .sd-contact .contact-info-card h6 span { color: rgba(255,255,255,.6) !important; }
+        .sd-contact .contact-info-card i { color: var(--accent); }
+
+        /* ── Footer ──────────────────────────────────────── */
+        .sd-footer { background: #080d12; }
     </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+<body data-spy="scroll" data-target="#mainNav" data-offset="60" id="home">
 
-    <!-- ══ HERO ══════════════════════════════════════════════ -->
-    <header class="header">
+    <!-- ══ TOPNAV ════════════════════════════════════════════ -->
+    <nav class="navbar sticky-top navbar-expand-lg sd-topnav" id="mainNav">
         <div class="container">
-            <ul class="social-icons pt-3">
-                <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com"><i class="ti-google" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube" aria-hidden="true"></i></a></li>
-            </ul>
-            <div class="header-content">
-                <h4 class="header-subtitle">Hello, I am</h4>
-                <h1 class="header-title">Dr. Suman De</h1>
-                <h6 class="typed">Global Product Leader &amp; Research Scientist</h6>
-                <div class="header-creds">
-                    <span class="cred-chip"><i class="ti-crown"></i>PhD &middot; IIT Kharagpur</span>
-                    <span class="cred-chip"><i class="ti-briefcase"></i>11 Years at SAP</span>
-                    <span class="cred-chip"><i class="ti-book"></i>52 Publications</span>
-                    <span class="cred-chip"><i class="ti-microphone"></i>11 Keynote Talks</span>
-                    <span class="cred-chip"><i class="ti-cup"></i>61 SAP Awards</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ══ NAVBAR ════════════════════════════════════════════ -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#home">Dr. Suman De</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sdNavLinks" aria-controls="sdNavLinks" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <div class="collapse navbar-collapse" id="sdNavLinks">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#career" class="nav-link">Career</a></li>
                     <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <img src="assets/imgs/avatar.jpg" alt="Dr. Suman De" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Dr. Suman De</h5>
-                        <div class="brand-subtitle">Head, Research &amp; Industry-Academia Partnerships</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="#portfolio" class="nav-link">Speaking</a></li>
                     <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                    <li class="nav-item last-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ══ ABOUT ══════════════════════════════════════════════ -->
-    <section id="about" class="about-premium">
-        <div class="container">
-            <div class="row align-items-center">
+    <!-- ══ MASTHEAD (Executive Split) ═══════════════════════ -->
+    <section class="sd-masthead">
+        <div class="container h-100">
+            <div class="row align-items-center" style="min-height:320px;">
 
-                <!-- Photo column -->
-                <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                    <img src="assets/imgs/avatar.jpg" alt="Dr. Suman De" class="profile-photo">
-                    <div><span class="photo-badge">SAP Labs India &middot; Bangalore</span></div>
-                    <ul class="social-icons justify-content-center mt-4">
-                        <li class="social-item"><a class="social-link" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" style="color:#0077b5"><i class="ti-linkedin"></i></a></li>
-                        <li class="social-item"><a class="social-link" href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" style="color:#4285F4"><i class="ti-book"></i></a></li>
-                        <li class="social-item"><a class="social-link" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank" style="color:#F85C70"><i class="ti-youtube"></i></a></li>
-                        <li class="social-item"><a class="social-link" href="https://twitter.com/somude" target="_blank" style="color:#1da1f2"><i class="ti-twitter"></i></a></li>
-                        <li class="social-item"><a class="social-link" href="https://www.instagram.com/sumandevneogi/" target="_blank" style="color:#e1306c"><i class="ti-instagram"></i></a></li>
-                    </ul>
-                </div>
+                <!-- Left: identity block -->
+                <div class="col-lg-7 py-3">
+                    <p class="sd-mast-eyebrow">Head, Research &amp; Industry-Academia Partnerships &middot; SAP Labs India</p>
+                    <h1 class="sd-mast-name">Dr. Suman De</h1>
+                    <p class="sd-mast-title">Global Product Leader &amp; Research Scientist</p>
+                    <p class="sd-mast-org">Managing Director&rsquo;s Office &middot; SAP Labs India &middot; Bangalore, India</p>
 
-                <!-- Bio column -->
-                <div class="col-lg-8 pl-lg-5">
-                    <p class="eyebrow">Who is Dr. Suman De?</p>
-                    <h2 class="font-weight-bold mb-2" style="font-size:2rem; line-height:1.2;">Global Product Leader<br>&amp; Research Scientist</h2>
-                    <span class="line mb-4"></span>
-                    <p class="lead" style="color:#495057;">A results-driven professional with 11 years at SAP and a PhD from IIT Kharagpur's Centre for Computational &amp; Data Sciences, Dr. Suman De leads Research &amp; Industry-Academia Partnerships at SAP Labs India. His work spans enterprise product management, cutting-edge AI and Cloud ERP research, and academia — co-developing curricula with the Technical University of Munich, IITs, and other leading institutions.</p>
-                    <p style="color:#6c757d;">With 52 research publications across <em>IEEE Transactions on Artificial Intelligence</em>, <em>IEEE Engineering Management Review</em>, and Springer, 282+ citations (h-index: 10), and 11 international keynote talks, Dr. De is a recognised thought leader. He is a former Visiting Faculty for MBA students at Symbiosis International University, and is nominated for the <em>Indian Youth Engineering Icon of the Year</em> at the IET Awards.</p>
-
-                    <!-- Stat chips -->
-                    <div class="row mt-3 mb-4">
-                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">11</span><span class="lbl">Yrs at SAP</span></div></div>
-                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">52</span><span class="lbl">Publications</span></div></div>
-                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">282+</span><span class="lbl">Citations</span></div></div>
-                        <div class="col-6 col-sm-3"><div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div></div>
+                    <div class="sd-mast-chips">
+                        <span class="sd-chip"><i class="ti-crown"></i>PhD &middot; IIT Kharagpur</span>
+                        <span class="sd-chip"><i class="ti-briefcase"></i>11 Years at SAP</span>
+                        <span class="sd-chip"><i class="ti-book"></i>52 Publications</span>
+                        <span class="sd-chip"><i class="ti-microphone"></i>11 Keynotes</span>
+                        <span class="sd-chip"><i class="ti-cup"></i>61 SAP Awards</span>
+                        <span class="sd-chip"><i class="ti-star"></i>h-index 10</span>
                     </div>
 
-                    <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-danger btn-rounded mr-2 mb-2"><i class="ti-book pr-2"></i>Google Scholar</a>
-                    <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-danger btn-rounded mr-2 mb-2"><i class="ti-linkedin pr-2"></i>LinkedIn</a>
-                    <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="btn btn-outline-danger btn-rounded mb-2"><i class="ti-link pr-2"></i>IEEE Xplore</a>
+                    <div class="sd-mast-actions">
+                        <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="sd-btn-primary"><i class="ti-linkedin"></i>LinkedIn</a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="sd-btn-ghost"><i class="ti-book"></i>Google Scholar</a>
+                        <a href="mailto:write2sumand@gmail.com" class="sd-btn-ghost"><i class="ti-email"></i>Contact</a>
+                    </div>
+
+                    <div class="sd-mast-socials">
+                        <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="sd-social-link" title="LinkedIn"><i class="ti-linkedin"></i></a>
+                        <a href="https://twitter.com/somude" target="_blank" class="sd-social-link" title="Twitter"><i class="ti-twitter"></i></a>
+                        <a href="https://www.youtube.com/@thewanderinggeek7194" target="_blank" class="sd-social-link" title="YouTube"><i class="ti-youtube"></i></a>
+                        <a href="https://www.instagram.com/sumandevneogi/" target="_blank" class="sd-social-link" title="Instagram"><i class="ti-instagram"></i></a>
+                        <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="sd-social-link" title="IEEE Xplore"><i class="ti-link"></i></a>
+                        <a href="https://www.facebook.com/sumandevneogi/" target="_blank" class="sd-social-link" title="Facebook"><i class="ti-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: photo -->
+                <div class="col-lg-5 text-center">
+                    <div class="sd-mast-photo-wrap">
+                        <img src="assets/imgs/avatar.jpg" alt="Dr. Suman De" class="sd-mast-photo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+    <section id="about" class="section-lg" style="background:#fff;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <p class="eyebrow">About Dr. Suman De</p>
+                    <h2 class="font-weight-bold">Who I <span class="text-accent">Am</span></h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <p class="lead" style="color:#495057;">A results-driven professional with 11 years at SAP and a PhD from IIT Kharagpur&rsquo;s Centre for Computational &amp; Data Sciences, Dr. Suman De leads Research &amp; Industry-Academia Partnerships at SAP Labs India. His work spans enterprise product management, cutting-edge AI and Cloud ERP research, and academia — co-developing curricula with the Technical University of Munich, IITs, and other leading institutions.</p>
+                    <p style="color:var(--muted);">With 52 research publications across <em>IEEE Transactions on Artificial Intelligence</em>, <em>IEEE Engineering Management Review</em>, and Springer, 282+ citations (h-index: 10), and 11 international keynote talks, Dr. De is a recognised thought leader. He is a former Visiting Faculty for MBA students at Symbiosis International University and is nominated for the <em>Indian Youth Engineering Icon of the Year</em> at the IET Awards.</p>
+                    <div class="mt-3">
+                        <a href="https://scholar.google.com/citations?hl=en&user=F-IZCdMAAAAJ" target="_blank" class="btn btn-danger btn-rounded mr-2 mb-2"><i class="ti-book pr-2"></i>Google Scholar</a>
+                        <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-danger btn-rounded mr-2 mb-2"><i class="ti-linkedin pr-2"></i>LinkedIn</a>
+                        <a href="https://ieeexplore.ieee.org/author/37088393809" target="_blank" class="btn btn-outline-danger btn-rounded mb-2"><i class="ti-link pr-2"></i>IEEE Xplore</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6"><div class="stat-chip"><span class="num">11</span><span class="lbl">Yrs at SAP</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">52</span><span class="lbl">Publications</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">282+</span><span class="lbl">Citations</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div></div>
+                    </div>
                 </div>
             </div>
 
             <!-- What I Offer — 3 cards -->
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="offer-card">
+                    <div class="sd-offer-card">
                         <div class="offer-icon"><i class="ti-widget"></i></div>
                         <h5 class="font-weight-bold mb-2">Research &amp; Innovation</h5>
                         <p class="subtitle mb-0">Collaborative research on Cloud ERP, Industry 4.0, AI, and Software Engineering. Driving publications, patents, and prototypes with leading universities and enterprise teams.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="offer-card">
+                    <div class="sd-offer-card">
                         <div class="offer-icon"><i class="ti-paint-bucket"></i></div>
                         <h5 class="font-weight-bold mb-2">Product Leadership</h5>
                         <p class="subtitle mb-0">11 years of product management at SAP — from S/4HANA Public Cloud and BTP to startup incubation. Full-stack expertise, telemetry-driven strategy, and cross-functional team leadership.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="offer-card">
+                    <div class="sd-offer-card">
                         <div class="offer-icon"><i class="ti-stats-up"></i></div>
                         <h5 class="font-weight-bold mb-2">Thought Leadership &amp; Mentoring</h5>
                         <p class="subtitle mb-0">11 international keynotes, 25+ conference talks, MBA teaching, and hosting <em>The Wandering Geek</em> YouTube channel. Mentoring researchers, PMs, and startup founders.</p>
@@ -323,12 +453,12 @@
     </div>
 
     <!-- ══ CAREER JOURNEY ════════════════════════════════════ -->
-    <section class="section section-lg" id="career">
+    <section class="section-lg" id="career" style="background:#fff;">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12">
                     <p class="eyebrow">Professional Journey</p>
-                    <h2 class="font-weight-bold">Career <span class="text-danger">Timeline</span></h2>
+                    <h2 class="font-weight-bold">Career <span class="text-accent">Timeline</span></h2>
                     <span class="line"></span>
                 </div>
             </div>
@@ -402,23 +532,23 @@
 
                     <div class="impact-chip">
                         <div class="big">11</div>
-                        <div class="desc"><strong>Keynote sessions</strong> at International Conferences<br><span style="font-size:.78rem;color:#6c757d;">Including 6 keynotes for IEEE</span></div>
+                        <div class="desc"><strong>Keynote sessions</strong> at International Conferences<br><span style="font-size:.78rem;color:var(--muted);">Including 6 keynotes for IEEE</span></div>
                     </div>
                     <div class="impact-chip">
                         <div class="big">4</div>
-                        <div class="desc"><strong>Session &amp; TPC Chair</strong> roles<br><span style="font-size:.78rem;color:#6c757d;">At International IEEE &amp; Springer Conferences</span></div>
+                        <div class="desc"><strong>Session &amp; TPC Chair</strong> roles<br><span style="font-size:.78rem;color:var(--muted);">At International IEEE &amp; Springer Conferences</span></div>
                     </div>
                     <div class="impact-chip">
                         <div class="big">12</div>
-                        <div class="desc"><strong>Reviewer</strong> for International Conferences<br><span style="font-size:.78rem;color:#6c757d;">IEEE &amp; Springer venues</span></div>
+                        <div class="desc"><strong>Reviewer</strong> for International Conferences<br><span style="font-size:.78rem;color:var(--muted);">IEEE &amp; Springer venues</span></div>
                     </div>
                     <div class="impact-chip">
                         <div class="big">25+</div>
-                        <div class="desc"><strong>Conferences</strong> spoken at globally<br><span style="font-size:.78rem;color:#6c757d;">Across research and industry platforms</span></div>
+                        <div class="desc"><strong>Conferences</strong> spoken at globally<br><span style="font-size:.78rem;color:var(--muted);">Across research and industry platforms</span></div>
                     </div>
                     <div class="impact-chip">
                         <div class="big">150+</div>
-                        <div class="desc"><strong>Colleagues mentored</strong> in Agile transformation<br><span style="font-size:.78rem;color:#6c757d;">As Agile Coach at SAP Labs India</span></div>
+                        <div class="desc"><strong>Colleagues mentored</strong> in Agile transformation<br><span style="font-size:.78rem;color:var(--muted);">As Agile Coach at SAP Labs India</span></div>
                     </div>
 
                     <div class="mt-4 p-4" style="background:#f8f9fa;border-radius:12px;border-left:3px solid var(--accent);">
@@ -432,12 +562,12 @@
     </section>
 
     <!-- ══ RESEARCH PUBLICATIONS ════════════════════════════ -->
-    <section class="section section-lg bg-custom-gray" id="research">
+    <section class="section-lg bg-off-white" id="research">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12">
                     <p class="eyebrow">52 Papers &middot; 282+ Citations &middot; h-index 10</p>
-                    <h2 class="font-weight-bold">Selected <span class="text-danger">Publications</span></h2>
+                    <h2 class="font-weight-bold">Selected <span class="text-accent">Publications</span></h2>
                     <span class="line"></span>
                 </div>
             </div>
@@ -474,7 +604,7 @@
                     <div class="pub-card">
                         <div class="pub-venue">IEEE PDGC &middot; 2022</div>
                         <div class="pub-title">Enabling Cost-Effective Inspection and Failure Detection of Spare Parts in Industry 4.0</div>
-                        <div class="pub-meta">pp. 594–599 · DOI: <a href="https://doi.org/10.1109/PDGC56933.2022.10053273" target="_blank" class="text-accent">10.1109/PDGC56933.2022.10053273</a></div>
+                        <div class="pub-meta">pp. 594–599 &middot; DOI: <a href="https://doi.org/10.1109/PDGC56933.2022.10053273" target="_blank" class="text-accent">10.1109/PDGC56933.2022.10053273</a></div>
                         <div class="mt-2"><span class="pub-badge">IEEE</span><span class="pub-badge">Industry 4.0</span></div>
                     </div>
                 </div>
@@ -534,10 +664,10 @@
     </section>
 
     <!-- ══ SPEAKING & PORTFOLIO ══════════════════════════════ -->
-    <section class="section section-lg" id="portfolio">
+    <section class="section-lg" id="portfolio" style="background:#fff;">
         <div class="container">
             <p class="eyebrow">Keynotes, Interviews &amp; Thought Leadership</p>
-            <h2 class="font-weight-bold mb-5">Speaking <span class="text-danger">&amp; Portfolio</span></h2>
+            <h2 class="font-weight-bold mb-5">Speaking <span class="text-accent">&amp; Portfolio</span></h2>
             <div class="portfolio">
                 <div class="filters">
                     <a href="#" data-filter=".new" class="active"><center>All</center></a>
@@ -660,12 +790,12 @@
     </section>
 
     <!-- ══ EDUCATION ════════════════════════════════════════ -->
-    <section class="section section-lg bg-custom-gray" id="education">
+    <section class="section-lg bg-off-white" id="education">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <p class="eyebrow">Academic Credentials</p>
-                    <h2 class="font-weight-bold mb-4">Education <span class="text-danger">&amp; Qualifications</span></h2>
+                    <h2 class="font-weight-bold mb-4">Education <span class="text-accent">&amp; Qualifications</span></h2>
                     <span class="line mb-5"></span>
 
                     <div class="edu-card">
@@ -692,7 +822,7 @@
                     <div class="row">
                         <div class="col-12 mb-4">
                             <p class="eyebrow">Core Competencies</p>
-                            <h4 class="font-weight-bold mb-3">Skills &amp; <span class="text-danger">Expertise</span></h4>
+                            <h4 class="font-weight-bold mb-3">Skills &amp; <span class="text-accent">Expertise</span></h4>
 
                             <div class="mb-3">
                                 <div class="skill-group-label">Product Leadership</div>
@@ -730,7 +860,7 @@
 
                         <div class="col-12">
                             <p class="eyebrow">Verified Credentials</p>
-                            <h4 class="font-weight-bold mb-3"><span class="text-danger">Certifications</span></h4>
+                            <h4 class="font-weight-bold mb-3"><span class="text-accent">Certifications</span></h4>
 
                             <div class="cert-item">
                                 <div class="cert-icon"><i class="ti-bar-chart"></i></div>
@@ -768,27 +898,19 @@
     </section>
 
     <!-- ══ ACHIEVEMENTS ═════════════════════════════════════ -->
-    <section class="section section-lg">
+    <section class="section-lg" style="background:#fff;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <p class="eyebrow">Recognition</p>
-                    <h2 class="font-weight-bold">Awards &amp; <span class="text-danger">Achievements</span></h2>
+                    <h2 class="font-weight-bold">Awards &amp; <span class="text-accent">Achievements</span></h2>
                     <span class="line mb-4"></span>
-                    <p style="color:#6c757d;">A track record of recognition spanning industry awards, national pitching challenges, academic best-paper awards, and internal SAP leadership accolades — spanning innovation, mentorship, and customer centricity.</p>
+                    <p style="color:var(--muted);">A track record of recognition spanning industry awards, national pitching challenges, academic best-paper awards, and internal SAP leadership accolades — spanning innovation, mentorship, and customer centricity.</p>
                     <div class="row mt-4">
-                        <div class="col-6">
-                            <div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-chip"><span class="num">7×</span><span class="lbl">Thought Leadership Champion</span></div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-chip"><span class="num">3</span><span class="lbl">Best Paper Awards</span></div>
-                        </div>
-                        <div class="col-6">
-                            <div class="stat-chip"><span class="num">3</span><span class="lbl">National Pitch Awards</span></div>
-                        </div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">61</span><span class="lbl">SAP Awards</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">7×</span><span class="lbl">Thought Leadership Champion</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">3</span><span class="lbl">Best Paper Awards</span></div></div>
+                        <div class="col-6"><div class="stat-chip"><span class="num">3</span><span class="lbl">National Pitch Awards</span></div></div>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -811,42 +933,41 @@
     </section>
 
     <!-- ══ CONTACT ══════════════════════════════════════════ -->
-    <div class="section contact" id="contact">
+    <div class="section-lg sd-contact" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="sd-contact contact-form-card">
                         <h4 class="contact-title">Get in touch with <a href="mailto:write2sumand@gmail.com">Dr. Suman De</a></h4>
-                        <p class="text-muted mt-3">For research collaborations, speaking engagements, industry-academia partnerships, or thought leadership inquiries — reach out via email or connect on LinkedIn.</p>
+                        <p class="mt-3" style="color:rgba(255,255,255,.6);">For research collaborations, speaking engagements, industry-academia partnerships, or thought leadership inquiries — reach out via email or connect on LinkedIn.</p>
                         <div class="mt-4">
                             <a href="mailto:write2sumand@gmail.com" class="btn btn-danger btn-rounded mr-2 mb-2"><i class="ti-email pr-2"></i>write2sumand@gmail.com</a>
-                            <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-danger btn-rounded mb-2"><i class="ti-linkedin pr-2"></i>Connect on LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="btn btn-outline-light btn-rounded mb-2"><i class="ti-linkedin pr-2"></i>Connect on LinkedIn</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h4 class="contact-title">Get in touch</h4>
-                        <div class="row mb-2">
+                    <div class="sd-contact contact-info-card">
+                        <h4 class="mb-4">Contact Info</h4>
+                        <div class="row mb-3">
                             <div class="col-1 pt-1 mr-1"><i class="ti-map-alt icon-md"></i></div>
                             <div class="col-10">
-                                <h6 class="d-inline">Address:<br><span class="text-muted">SAP Labs India, #138 EPIP Zone, Whitefield, Bangalore &mdash; 560066.</span></h6>
+                                <h6 class="d-inline" style="color:#fff;">Address:<br><span style="color:rgba(255,255,255,.6);font-weight:400;">SAP Labs India, #138 EPIP Zone, Whitefield, Bangalore &mdash; 560066.</span></h6>
                             </div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-4">
                             <div class="col-1 pt-1 mr-1"><i class="ti-envelope icon-md"></i></div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email:<br><span class="text-muted">write2sumand@gmail.com</span></h6>
+                                <h6 class="d-inline" style="color:#fff;">Email:<br><span style="color:rgba(255,255,255,.6);font-weight:400;">write2sumand@gmail.com</span></h6>
                             </div>
                         </div>
-                        <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/sumandevneogi/" target="_blank"><i class="ti-facebook"></i></a></li>
-                            <li class="social-item"><a class="social-link text-light" href="https://twitter.com/somude" target="_blank"><i class="ti-twitter"></i></a></li>
-                            <li class="social-item"><a class="social-link text-light" href="mailto:write2sumand@gmail.com"><i class="ti-google"></i></a></li>
-                            <li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/sumandevneogi/" target="_blank"><i class="ti-instagram"></i></a></li>
-                            <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank"><i class="ti-linkedin"></i></a></li>
-                            <li class="social-item"><a class="social-link text-light" href="https://www.youtube.com/@thewanderinggeek7194" target="_blank"><i class="ti-youtube"></i></a></li>
-                        </ul>
+                        <div class="sd-mast-socials">
+                            <a href="https://www.facebook.com/sumandevneogi/" target="_blank" class="sd-social-link"><i class="ti-facebook"></i></a>
+                            <a href="https://twitter.com/somude" target="_blank" class="sd-social-link"><i class="ti-twitter"></i></a>
+                            <a href="https://www.instagram.com/sumandevneogi/" target="_blank" class="sd-social-link"><i class="ti-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/dr-suman-de-54351a22/" target="_blank" class="sd-social-link"><i class="ti-linkedin"></i></a>
+                            <a href="https://www.youtube.com/@thewanderinggeek7194" target="_blank" class="sd-social-link"><i class="ti-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -854,7 +975,7 @@
     </div>
 
     <!-- ══ FOOTER ════════════════════════════════════════════ -->
-    <footer class="footer py-3">
+    <footer class="sd-footer py-3">
         <div class="container">
             <p class="small mb-0 text-light">
                 &copy; <script>document.write(new Date().getFullYear())</script> Dr. Suman De &mdash; Built with <i class="ti-heart text-danger"></i> using <a href="http://devcrud.com" target="_blank"><span class="text-danger">DevCRUD</span></a>
