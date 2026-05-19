@@ -12,7 +12,11 @@
       "Bash(find ~/Downloads -name \"*.jpeg\" -newer ~/Downloads/1773579087237.jpeg 2>/dev/null; find ~/.claude -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" 2>/dev/null | head -10)",
       "Read(//Users/I322264/.claude/**)",
       "WebFetch(domain:www.credly.com)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:www.srh-university.de)",
+      "WebFetch(domain:icoct.org)",
+      "WebFetch(domain:ieeegcat.org)",
+      "WebFetch(domain:ieee-gcat.org)"
     ]
   }
 }
