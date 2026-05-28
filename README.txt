@@ -1,5 +1,5 @@
 Dr. Suman De — Personal Professional Profile Site
-https://your-speaker.github.io
+https://dr-suman-de.github.io/
 
 Executive Split design — custom single-page portfolio for Dr. Suman De,
 Head of Research & Industry-Academia Partnerships at SAP Labs India.
